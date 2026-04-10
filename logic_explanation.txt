@@ -1,0 +1,62 @@
+Logic Explanation
+=================
+
+This project is designed using a structured approach to simulate a real-world student management system.
+
+1. Data Storage
+---------------
+- Students are stored using a dictionary or list
+- Each student object contains:
+  • ID
+  • Name
+  • Age
+  • Courses
+  • Grades
+
+2. Class Responsibility
+-----------------------
+- Person Class:
+  Stores basic information (name, age)
+
+- Student Class:
+  Inherits from Person
+  Adds student-specific data (ID, courses, grades)
+  Contains method to calculate GPA
+
+- Manager Class:
+  Handles all system operations such as:
+  • Adding students
+  • Deleting students
+  • Searching
+  • Displaying data
+
+3. GPA Calculation Logic
+------------------------
+- GPA is calculated by averaging all course grades
+- Formula:
+  GPA = sum(grades) / number of courses
+- Automatically updates when grades are added or modified
+
+4. Sorting & Ranking
+--------------------
+- Students are ranked based on GPA
+- Lambda function is used for sorting:
+  sort(key = lambda student: student.gpa, reverse=True)
+
+5. System Flow
+--------------
+- User inputs data (add/search/update)
+- Manager processes the request
+- Student object updates internally
+- Results are displayed to the user
+
+6. Error Handling (Basic)
+-------------------------
+- Prevent division by zero (no grades case)
+- Validate student existence before operations
+
+7. Design Goal
+--------------
+- Keep logic simple and readable
+- Separate responsibilities between classes
+- Make system easy to extend in future (GUI / Database)
